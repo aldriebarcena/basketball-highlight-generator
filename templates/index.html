@@ -15,5 +15,24 @@
       <input type="file" name="file" accept="video/*" />
       <input type="submit" value="Upload" />
     </form>
+
+    {% if filename %}
+    <div class="video-preview">
+      <h2>Processed Video Preview</h2>
+      <video controls>
+        <source
+          src="{{ url_for('download_file', filename=filename) }}"
+          type="{% if filename.endswith('.mp4') %}video/mp4{% elif filename.endswith('.mov') %}video/quicktime{% elif filename.endswith('.avi') %}video/x-msvideo{% elif filename.endswith('.mkv') %}video/x-matroska{% endif %}"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <br />
+      <a
+        href="{{ url_for('download_file', filename=filename) }}"
+        class="download-button"
+        >Download Processed Video</a
+      >
+    </div>
+    {% endif %}
   </body>
 </html>
