@@ -1,2 +1,2 @@
 # basketball-highlight-generator
-Web app that lets users upload basketball games, and generates a highlight reel containing all major scoring events. 
+Web app that allows users to upload basketball games and genearte a highlight reel containing all major scoring events. 
